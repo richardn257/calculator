@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    border: 1px solid black;
+    width: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 60px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px;   
+}
+
