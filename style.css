@@ -1,22 +1,41 @@
 body {
+    margin-top: 100px;
     display: flex;
     justify-content: center;
+}
+
+.screen {
+    display: flex;
+    justify-content: flex-end;
+    border: 1px solid black;
+    width: 310px;
+    font-size: 20px;
+    /* padding: 10px; */
+    border-radius: 8px;
+    margin: 5px;
 }
 
 .container {
     border: 1px solid black;
-    width: 200px;
+    width: 350px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
 }
 
 button {
-    width: 60px;
+    width: 70px;
     font-size: 20px;
     padding: 10px;
     border-radius: 8px;
-    margin: 10px;   
+    margin: 5px;
 }
 
+.clear,
+.delete {
+    width: 150px;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 5px;
+}
