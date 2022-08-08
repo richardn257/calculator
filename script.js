@@ -1,3 +1,13 @@
+const buttons = document.querySelectorAll('button');
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        display(button.textContent)
+    });
+});
+
+const screen = document.querySelector('.screen');
+screen.textContent = "";
+
 function add(a, b) {
     return a + b;
 }
@@ -25,4 +35,9 @@ function operate(op, a, b) {
         return divide(a, b);
 }
 
-console.log(operate("/", 6, 2))
+function display(btnVal) {
+    screen.textContent += btnVal;
+    console.log(btnVal);
+}
+
+// console.log(operate("/", 6, 2))
