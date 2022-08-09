@@ -35,9 +35,30 @@ function operate(op, a, b) {
         return divide(a, b);
 }
 
+let num1 = "", num2 = "", op = "", moveToNum2 = false;
 function display(btnVal) {
-    screen.textContent += btnVal;
-    console.log(btnVal);
+    if (btnVal == 'DELETE' || btnVal == 'CLEAR') {
+        screen.textContent = "";
+        num1 = "";
+        num2 = "";
+        op = "";
+        moveToNum2 = true;
+    }
+    else {
+        screen.textContent += btnVal;
+        if (btnVal == '+') {
+            op = btnVal;
+            moveToNum2 = true;
+        }
+        else if (!moveToNum2) {
+            num1 += btnVal;
+        } 
+        else {
+            num2 += btnVal;
+        }
+    }
+
+    // +num1 + +num2
 }
 
 // console.log(operate("/", 6, 2))
