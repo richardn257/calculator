@@ -29,26 +29,33 @@ function operate(op, a, b) {
         return add(a, b);
     else if (op == "-")
         subtract(a, b);
-    else if (op == "*")
+    else if (op == "×")
         multiply(a, b);
     else
         return divide(a, b);
 }
 
 let num1 = "", num2 = "", op = "", moveToNum2 = false;
+const operators = ['+', '-', '×', '÷'];
 function display(btnVal) {
     if (btnVal == 'DELETE' || btnVal == 'CLEAR') {
         screen.textContent = "";
         num1 = "";
         num2 = "";
         op = "";
-        moveToNum2 = true;
+        moveToNum2 = false;
     }
     else {
         screen.textContent += btnVal;
-        if (btnVal == '+') {
+        if ((btnVal == '+' || btnVal == '-' || btnVal == '×' || btnVal == '÷') && num2 != "") {
+            
+        }
+        else if (btnVal == '+' || btnVal == '-' || btnVal == '×' || btnVal == '÷') {
             op = btnVal;
             moveToNum2 = true;
+        }
+        else if (btnVal == '=') {
+
         }
         else if (!moveToNum2) {
             num1 += btnVal;
