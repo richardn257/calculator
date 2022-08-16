@@ -28,9 +28,9 @@ function operate(op, a, b) {
     if (op == "+")
         return add(a, b);
     else if (op == "-")
-        subtract(a, b);
+        return subtract(a, b);
     else if (op == "×")
-        multiply(a, b);
+        return multiply(a, b);
     else
         return divide(a, b);
 }
@@ -46,16 +46,15 @@ function display(btnVal) {
         moveToNum2 = false;
     }
     else {
-        screen.textContent += btnVal;
-        if ((btnVal == '+' || btnVal == '-' || btnVal == '×' || btnVal == '÷') && num2 != "") {
-            
+        if ((btnVal == '+' || btnVal == '-' || btnVal == '×' || btnVal == '÷' || btnVal == '=') && num2 != "") {
+            num1 = operate(op, +num1, +num2);
+            screen.textContent = num1;
+            num2 = "";
+            op = btnVal;
         }
         else if (btnVal == '+' || btnVal == '-' || btnVal == '×' || btnVal == '÷') {
             op = btnVal;
             moveToNum2 = true;
-        }
-        else if (btnVal == '=') {
-
         }
         else if (!moveToNum2) {
             num1 += btnVal;
@@ -63,6 +62,8 @@ function display(btnVal) {
         else {
             num2 += btnVal;
         }
+        if (btnVal != '=')
+            screen.textContent += btnVal;
     }
 
     // +num1 + +num2
