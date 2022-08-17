@@ -35,8 +35,10 @@ function operate(op, a, b) {
         return divide(a, b);
 }
 
-let num1 = "", num2 = "", op = "", moveToNum2 = false;
+let num1 = "", num2 = "", op = "";
 const operators = ['+', '-', '×', '÷'];
+let oneOp = false;
+
 function display(btnVal) {
     if (btnVal == 'DELETE' || btnVal == 'CLEAR') {
         screen.textContent = "";
@@ -52,21 +54,22 @@ function display(btnVal) {
             num2 = "";
             op = btnVal;
         }
-        else if (btnVal == '+' || btnVal == '-' || btnVal == '×' || btnVal == '÷') {
-            op = btnVal;
-            moveToNum2 = true;
+        else if ((btnVal == '+' || btnVal == '-' || btnVal == '×' || btnVal == '÷' || btnVal == '=')) {
+            if (btnVal != '=' && num1 != '' && !oneOp) {
+                op = btnVal;
+                oneOp = true;
+            }
         }
-        else if (!moveToNum2) {
+        else if (op == '') {
             num1 += btnVal;
         } 
         else {
             num2 += btnVal;
         }
-        if (btnVal != '=')
+
+        if (btnVal != '=' && num1 != '')
             screen.textContent += btnVal;
     }
-
-    // +num1 + +num2
 }
 
 // console.log(operate("/", 6, 2))
