@@ -63,7 +63,7 @@ function display(btnVal) {
             else {
                 screen.textContent += op;
             }
-
+            oneOp = false;
             num2 = "";
         }
         else if ((btnVal == '+' || btnVal == '-' || btnVal == '×' || btnVal == '÷' || btnVal == '=')) {
@@ -77,7 +77,6 @@ function display(btnVal) {
             num1 = btnVal;
             screen.textContent = btnVal;
             op = '';
-            oneOp = false;
         }
         else if (op == '') {
             num1 += btnVal;
