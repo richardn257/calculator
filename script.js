@@ -5,6 +5,18 @@ buttons.forEach(button => {
     });
 });
 
+buttons.forEach(button => {
+    button.addEventListener('mouseenter', () => {
+        button.style.backgroundColor = '#E0E0E0'
+    });
+});
+
+buttons.forEach(button => {
+    button.addEventListener('mouseleave', () => {
+        button.style.backgroundColor = ''
+    });
+});
+
 const screen = document.querySelector('.screen');
 screen.textContent = "";
 
