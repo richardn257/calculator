@@ -1,7 +1,20 @@
-body {
-    margin-top: 100px;
+.body {
+    /* margin-top: 100px; */
+    margin: 0;
+    height: 100vh;
     display: flex;
+    align-items: center;
     justify-content: center;
+}
+
+.container {
+    border: 1px solid black;
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 15px 0px;
+    background-color: black;
 }
 
 .screen {
@@ -14,15 +27,7 @@ body {
     padding: 20px;
     border-radius: 8px;
     margin: 5px;
-}
-
-.container {
-    border: 1px solid black;
-    width: 350px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 15px 0px;
+    background-color: aqua;
 }
 
 button {
@@ -33,6 +38,8 @@ button {
     border-radius: 8px;
     margin: 5px;
 }
+
+button:hover {background-color: #E0E0E0;}
 
 .clear,
 .delete {
